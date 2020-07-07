@@ -1,3 +1,4 @@
+let boundaries = [];
 let player;
 const ROTATE_AMOUNT = 0.1;
 
@@ -10,6 +11,14 @@ function draw() {
   background(0);
   player.update();
   player.draw();
+
+  for (let boundary of boundaries) {
+    boundary.draw();
+  }
+}
+
+function mousePressed() {
+  boundaries.push(new Boundary(mouseX, mouseY));
 }
 
 function keyPressed() {
