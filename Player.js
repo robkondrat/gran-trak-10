@@ -5,7 +5,7 @@ class Player {
 
   respawn() {
     this.x = width / 2 + 10;
-    this.y = 25;
+    this.y = 30;
     this.speed = 1;
     this.angle = 0;
     this.rotateAmount = 0;
@@ -38,7 +38,8 @@ class Player {
 
     push();
     translate(this.x, this.y);
-    rotate(0, 0, 15, 15);
+    rotate(this.angle);
+    rect(0, 0, 15, 15);
     pop();
 
     push();
